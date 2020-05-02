@@ -1,26 +1,61 @@
 <template>
-  <div class="home">
-    <div class="cover"></div>
-  </div>
+    <div class="home">
+        <div class="cover"></div>
+        <div class="btn-enter">推开</div>
+    </div>
 </template>
 
 <script>
 
-export default {
-  name: 'Home',
-  components: {
-
-  }
-}
+    export default {
+        name: 'Home',
+        components: {}
+    }
 </script>
 <style lang="scss" scoped>
-  .home{
-    .cover{
-      width: 100vw;
-      height: 100vh;
-      background: url("../assets/img/cover.svg") no-repeat center;
-      background-size: 160px auto;
-      animation: cover 2s linear forwards;
+    .home {
+        .cover {
+            width: 100vw;
+            height: 100vh;
+            background: url("../assets/img/cover.svg") no-repeat center;
+            background-size: 160px auto;
+            animation: cover 1s linear forwards;
+        }
+
+        .btn-enter {
+            position: absolute;
+            font-family: "kaiti";
+            bottom: 25vh;
+            left: calc(50vw - 48px);
+            width: 96px;
+            padding: 8px 0;
+            font-size: 18px;
+            text-align: center;
+            background: #EEDAB9;
+            border: 1px solid #B48F53;
+            color: #B48F53;
+            border-radius: 200px;
+            z-index: 999;
+            cursor: pointer;
+            transition: all ease .4s;
+            &:hover{
+                color: #fff;
+                background: #B48F53;
+            }
+        }
     }
-  }
+
+    @keyframes cover {
+        0% {
+            opacity: 0;
+            background-size: 0 auto;
+        }
+        80% {
+            opacity: 1;
+            background-size: 96px auto;
+        }
+        100% {
+            background-size: 240px auto;
+        }
+    }
 </style>
