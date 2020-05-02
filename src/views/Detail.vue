@@ -18,9 +18,14 @@
                 </div>
             </swiper-slide>
             <div class="btn-group">
-                <div class="btn-prev" slot="button-prev">上一象</div>
-                <div class="btn-next" slot="button-next">下一象</div>
+                <div class="btn-prev">上一象</div>
+                <div class="btn-next">下一象</div>
             </div>
+
+            <!--            <div class="btn-group">-->
+            <!--                <div class="btn-prev" slot="button-prev">上一象</div>-->
+            <!--                <div class="btn-next" slot="button-next">下一象</div>-->
+            <!--            </div>-->
         </swiper>
     </div>
 </template>
