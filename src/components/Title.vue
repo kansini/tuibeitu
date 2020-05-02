@@ -2,7 +2,7 @@
     <div class="title">
         <div class="title-item">
             <div>第{{title.sn}}象</div>
-            <div>{{title.ganzhi}}</div>
+             <div>{{title.ganzhi}}</div>
         </div>
         <div class="title-item">
             <div>{{title.hexagrams1}}</div>

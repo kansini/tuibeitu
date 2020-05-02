@@ -15,13 +15,12 @@
                         <tb-poem :poem="item.poem.predict"></tb-poem>
                         <tb-poem title="颂曰" :poem="item.poem.description"></tb-poem>
                     </div>
-                    <div class="btn-group">
-                        <div class="btn" :class="{disable : index == 0}">上一象</div>
-                        <div class="btn" :class="{disable : index == detail.length - 1}">下一象</div>
-                    </div>
                 </div>
             </swiper-slide>
-            <!--            <div class="swiper-pagination" slot="pagination"></div>-->
+            <div class="btn-group">
+                <div class="btn-prev" slot="button-prev">上一象</div>
+                <div class="btn-next" slot="button-next">下一象</div>
+            </div>
         </swiper>
     </div>
 </template>
@@ -45,10 +44,14 @@
                 detail: [],
                 swiperOption: {
                     direction: 'vertical',
-                    effect : 'coverflow',
+                    effect: 'flip',
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.btn-next',
+                        prevEl: '.btn-prev'
                     }
                 }
             }
@@ -71,9 +74,56 @@
     }
 
     .detail {
+
         .swiper {
             height: 100%;
             width: 100%;
+
+            .btn-group {
+                position: fixed;
+                left: 0;
+                bottom: 24px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                z-index: 9999;
+
+                .btn-prev,
+                .btn-next {
+                    width: 96px;
+                    padding: 8px 0;
+                    font-size: 18px;
+                    text-align: center;
+                    //background: $color-light;
+                    border: 1px solid $color-red;
+                    color: $color-red;
+                    border-radius: 200px;
+                    cursor: pointer;
+                    transition: all ease .4s;
+
+                    &:hover {
+                        color: #fff;
+                        background: $color-red;
+                    }
+                }
+
+                .btn-prev {
+                    margin-right: 64px;
+                }
+
+
+                .disable {
+                    opacity: .3;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        background: transparent;
+                        color: $color-red;
+                    }
+                }
+            }
+
+
         }
 
         .tool-bar {
@@ -149,49 +199,7 @@
                 }
 
             }
-
-            .btn-group {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-
-                .btn {
-                    width: 96px;
-                    padding: 8px 0;
-                    font-size: 18px;
-                    text-align: center;
-                    //background: $color-light;
-                    border: 1px solid $color-red;
-                    color: $color-red;
-                    border-radius: 200px;
-                    z-index: 999;
-                    cursor: pointer;
-                    transition: all ease .4s;
-
-                    &:not(:last-child) {
-                        margin-right: 64px;
-                    }
-
-                    &:hover {
-                        color: #fff;
-                        background: $color-red;
-                    }
-                }
-
-                .disable {
-                    opacity: .3;
-                    cursor: not-allowed;
-
-                    &:hover {
-                        background: transparent;
-                        color: $color-red;
-                    }
-                }
-            }
-
         }
-
-
     }
 
 </style>
