@@ -1,17 +1,20 @@
 <template>
     <div class="detail">
-        <div class="detail-content">
-            <div class="figure">
-                <img src="../assets/img/figure2.svg" alt="">
+        <div class="detail-item" v-for="(item,index) in detail">
+            <div class="detail-content">
+                <div class="figure">
+                    <img :src="`./img/figure${index + 1}.svg`" alt="">
+                </div>
+                <tb-title :title="item.title"/>
+                <tb-poem :poem="item.poem.predict"></tb-poem>
+                <tb-poem title="颂曰" :poem="item.poem.description"></tb-poem>
             </div>
-            <tb-title/>
-            <tb-poem></tb-poem>
-            <tb-poem title="颂曰" :poem="description"></tb-poem>
+            <div class="btn-group">
+                <div class="btn disable">上一象</div>
+                <div class="btn">下一象</div>
+            </div>
         </div>
-        <div class="btn-group">
-            <div class="btn disable">上一象</div>
-            <div class="btn">下一象</div>
-        </div>
+
     </div>
 </template>
 
@@ -27,12 +30,22 @@
         },
         data() {
             return {
+                detail: [],
                 description: [
                     ["自从盘古迄希夷", "虎斗龙争事正奇"],
                     ["悟得循环真谛在", "试于唐后论元机"]
                 ]
             }
         },
+        created() {
+            this.getDetail()
+        },
+        methods: {
+            getDetail() {
+                this.$axios.get('poem.json')
+                    .then(res => this.detail = res.data)
+            }
+        }
     }
 </script>
 
@@ -41,7 +54,7 @@
         background: #fff;
     }
 
-    .detail {
+    .detail-item {
         width: 100%;
 
         .detail-content {
@@ -83,9 +96,9 @@
                 padding: 8px 0;
                 font-size: 18px;
                 text-align: center;
-                background: $color-light;
-                border: 1px solid $color-dark;
-                color: $color-dark;
+                //background: $color-light;
+                border: 1px solid $color-red;
+                color: $color-red;
                 border-radius: 200px;
                 z-index: 999;
                 cursor: pointer;
@@ -97,7 +110,7 @@
 
                 &:hover {
                     color: #fff;
-                    background: #B48F53;
+                    background: $color-red;
                 }
             }
 
@@ -106,8 +119,8 @@
                 cursor: not-allowed;
 
                 &:hover {
-                    background: $color-light;
-                    color: $color-dark;
+                    background: transparent;
+                    color: $color-red;
                 }
             }
         }

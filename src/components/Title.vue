@@ -1,12 +1,12 @@
 <template>
     <div class="title">
         <div class="title-item">
-            <div>第一象</div>
-            <div>甲子</div>
+            <div>第{{title.sn}}象</div>
+            <div>{{title.ganzhi}}</div>
         </div>
         <div class="title-item">
-            <div>乾下乾上</div>
-            <div>乾</div>
+            <div>{{title.hexagrams1}}</div>
+            <div>{{title.hexagrams2}}</div>
         </div>
     </div>
 </template>
@@ -16,8 +16,15 @@
         name: "Title",
         props: {
             title: {
-                type: String,
-                default: ''
+                type: Object,
+                default: () => {
+                    return {
+                        "sn": "一",
+                        "ganzhi": "甲子",
+                        "hexagrams1": "乾下乾上",
+                        "hexagrams2": "乾"
+                    }
+                }
             }
         }
     }
