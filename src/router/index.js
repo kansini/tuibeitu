@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import axios from 'axios'
 
+axios.defaults.baseURL = './mock'
 Vue.use(VueRouter)
+
+Vue.prototype.$axios = axios
 
 const routes = [
     {

@@ -33,9 +33,9 @@
             padding: 8px 0;
             font-size: 18px;
             text-align: center;
-            background: $color-light;
-            border: 1px solid $color-dark;
-            color: $color-dark;
+            //background: $color-light;
+            border: 1px solid #D0021B;
+            color: #D0021B;
             border-radius: 200px;
             z-index: 999;
             cursor: pointer;
@@ -43,7 +43,7 @@
 
             &:hover {
                 color: #fff;
-                background: #B48F53;
+                background: #D0021B;
             }
         }
     }

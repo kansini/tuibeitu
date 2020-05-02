@@ -1,9 +1,13 @@
 <template>
     <div class="title">
-        <div>第一象</div>
-        <div>甲子</div>
-        <div>乾下乾上</div>
-        <div>乾</div>
+        <div class="title-item">
+            <div>第一象</div>
+            <div>甲子</div>
+        </div>
+        <div class="title-item">
+            <div>乾下乾上</div>
+            <div>乾</div>
+        </div>
     </div>
 </template>
 
@@ -23,9 +27,10 @@
     .title {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         position: relative;
+        padding: 16px 0;
         width: 64px;
         height: 480px;
         background: #000;
@@ -45,8 +50,12 @@
             bottom: -40px;
         }
 
-        div {
+        .title-item {
             width: 20px;
+
+            div:nth-child(1) {
+                margin-bottom: 16px;
+            }
         }
     }
 </style>
