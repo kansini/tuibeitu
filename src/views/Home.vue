@@ -31,9 +31,9 @@
             padding: 8px 0;
             font-size: 18px;
             text-align: center;
-            background: #EEDAB9;
-            border: 1px solid #B48F53;
-            color: #B48F53;
+            background: $color-light;
+            border: 1px solid $color-dark;
+            color: $color-dark;
             border-radius: 200px;
             z-index: 999;
             cursor: pointer;
