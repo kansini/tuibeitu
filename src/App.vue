@@ -1,14 +1,32 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <transition :name="transitionName">
+            <router-view class="child-view"/>
+        </transition>
+    </div>
 </template>
+<script>
+    export default {
+        name: 'App',
+        data() {
+            return {
+                transitionName: 'slide-left'
+            }
+        },
+        watch: {
+            '$route'(to, from) {
+                if (to.path == '/') {
+                    this.transitionName = 'slide-left';
+                } else {
+                    this.transitionName = 'slide-right';
+                }
+            }
+        }
+    }
+</script>
 
 <style lang="scss">
-  body{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: $base-bg;
-  }
+    body {
+        font-family: kangxizidianti;
+    }
 </style>

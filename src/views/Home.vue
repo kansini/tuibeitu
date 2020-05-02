@@ -1,12 +1,11 @@
 <template>
     <div class="home">
         <div class="cover"></div>
-        <div class="btn-enter">推开</div>
+        <div class="btn-enter" @click="$router.push('/detail')">推开</div>
     </div>
 </template>
 
 <script>
-
     export default {
         name: 'Home',
         components: {}
@@ -14,6 +13,10 @@
 </script>
 <style lang="scss" scoped>
     .home {
+        width: 100vw;
+        height: 100vh;
+        background: $base-bg;
+
         .cover {
             width: 100vw;
             height: 100vh;
@@ -24,7 +27,6 @@
 
         .btn-enter {
             position: absolute;
-            font-family: "kaiti";
             bottom: 25vh;
             left: calc(50vw - 48px);
             width: 96px;
@@ -38,7 +40,8 @@
             z-index: 999;
             cursor: pointer;
             transition: all ease .4s;
-            &:hover{
+
+            &:hover {
                 color: #fff;
                 background: #B48F53;
             }
