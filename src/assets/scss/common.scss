@@ -35,3 +35,14 @@ li {
 .slide-right-enter {
   transform: translate(100%, 0);
 }
+
+.slideIn-leave-active,
+.slideIn-enter-active {
+  transition: all ease .6s;
+}
+
+.slideIn-enter,
+.slideIn-leave-active {
+  transform: translate(100%, 0);
+}
+

@@ -1,70 +1,84 @@
 <template>
     <div class="detail">
+        <transition name="slideIn">
+            <div class="nav" v-if="isNav">
+                <navItem v-for="(item,index) in detail" :title="item.title" @click.native="nav(index)"/>
+            </div>
+        </transition>
         <div class="tool-bar">
             <div class="btn-home" @click="$router.push('/')"></div>
-            <div class="btn-context"></div>
+            <div class="btn-context" @click="isNav = true"></div>
         </div>
-        <swiper class="swiper" :options="swiperOption">
-            <swiper-slide v-for="(item,index) in detail" :key="index">
-                <div class="detail-item">
-                    <div class="detail-content">
-                        <div class="figure">
-                            <img :src="`./img/figure${index + 1}.svg`">
-                        </div>
-                        <tb-title :title="item.title"/>
-                        <tb-poem :poem="item.poem.predict"></tb-poem>
-                        <tb-poem title="颂曰" :poem="item.poem.description"></tb-poem>
-                    </div>
-                </div>
-            </swiper-slide>
-            <div class="btn-group">
-                <div class="btn-prev">上一象</div>
-                <div class="btn-next">下一象</div>
+        <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
+        <div class="btn-group">
+            <div class="btn-prev" @click="pre">上一象</div>
+            <div class="btn-play font-icons"
+                 @click="togglePlay">
+                {{playMsg}}
             </div>
-
-        </swiper>
+            <div class="btn-next" @click="next">下一象</div>
+        </div>
     </div>
 </template>
 
 <script>
-    import tbTitle from '@/components/Title'
-    import tbPoem from '@/components/Poem'
-    import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+
+    import detailItem from '@/components/DetailItem'
+    import tbNav from '@/components/Nav'
+    import navItem from '@/components/NavItem'
 
     export default {
         name: "detail",
         components: {
-            tbTitle,
-            tbPoem,
-            Swiper,
-            SwiperSlide
+            detailItem,
+            tbNav,
+            navItem
         },
+
         data() {
             return {
+                detailIndex: 0,
+                isNav: false,
                 detail: [],
-                swiperOption: {
-                    direction: 'vertical',
-                    effect: 'flip',
-                    autoPlay:true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    navigation: {
-                        nextEl: '.btn-next',
-                        prevEl: '.btn-prev'
-                    }
-                }
+                playMsg: 'play_arrow',
+                autoplayFlag: false,
             }
         },
         created() {
             this.getDetail()
         },
+        computed: {},
         methods: {
             getDetail() {
                 this.$axios.get('poem.json')
                     .then(res => this.detail = res.data)
+            },
+            pre() {
+                if (this.detailIndex > 0) {
+                    this.detailIndex -= 1
+                } else {
+                    this.detailIndex = this.detail.length - 1
+                }
+
+            },
+            next() {
+                if (this.detailIndex < this.detail.length - 1) {
+                    this.detailIndex += 1
+                } else {
+                    this.detailIndex = 0
+                }
+            },
+            togglePlay() {
+                this.autoplayFlag = !this.autoplayFlag
+                if (this.autoplayFlag) {
+                    this.playMsg = 'pause'
+                } else {
+                    this.playMsg = 'play_arrow'
+                }
+            },
+            nav(index) {
+                this.isNav = false
+                this.detailIndex = index
             }
         }
     }
@@ -77,55 +91,20 @@
 
     .detail {
 
-        .swiper {
-            height: 100%;
-            width: 100%;
-
-            .btn-group {
-                position: fixed;
-                left: 0;
-                bottom: 24px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                z-index: 9999;
-
-                .btn-prev,
-                .btn-next {
-                    width: 96px;
-                    padding: 8px 0;
-                    font-size: 18px;
-                    text-align: center;
-                    //background: $color-light;
-                    border: 1px solid $color-red;
-                    color: $color-red;
-                    border-radius: 200px;
-                    cursor: pointer;
-                    transition: all ease .4s;
-
-                    &:hover {
-                        color: #fff;
-                        background: $color-red;
-                    }
-                }
-
-                .btn-prev {
-                    margin-right: 64px;
-                }
-
-
-                .disable {
-                    opacity: .3;
-                    cursor: not-allowed;
-
-                    &:hover {
-                        background: transparent;
-                        color: $color-red;
-                    }
-                }
-            }
-
-
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: fixed;
+            width: 440px;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            background: #fff;
+            box-shadow: 0 0 100px 0 $color-light;
+            z-index: 1000;
+            padding: 8px;
+            box-sizing: border-box;
         }
 
         .tool-bar {
@@ -169,39 +148,70 @@
             }
         }
 
-
-        .detail-item {
+        .btn-group {
+            position: fixed;
+            align-items: center;
+            left: 0;
+            bottom: 24px;
             width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 9999;
 
-            .detail-content {
-                height: 520px;
-                margin: calc(50vh - 260px) auto 40px auto;
-                display: flex;
-                justify-content: center;
-                flex-direction: row-reverse;
+            div:not(:last-child) {
+                margin-right: 64px;
+            }
 
-                .figure {
-                    width: 520px;
-                    height: 520px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: $base-bg;
-                    border-radius: 12px;
+            .btn-prev,
+            .btn-next {
+                width: 96px;
+                padding: 8px 0;
+                font-size: 18px;
+                text-align: center;
+                //background: $color-light;
+                border: 1px solid $color-red;
+                color: $color-red;
+                border-radius: 200px;
+                cursor: pointer;
+                transition: all ease .4s;
 
-                    img {
-                        display: block;
-                        transition: all ease .6s;
-                        cursor: pointer;
+                &:hover {
+                    color: #fff;
+                    background: $color-red;
+                }
+            }
 
-                        &:hover {
-                            transform: scale(1.1);
-                        }
-                    }
+            .btn-play {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                border-radius: 40px;
+                color: #fff;
+                background: $color-red;
+                transition: all ease .4s;
+                text-align: center;
+                font-size: 30px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fff;
+                    background: $color-red;
                 }
 
             }
+
+            .disable {
+                opacity: .3;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: transparent;
+                    color: $color-red;
+                }
+            }
         }
+
+
     }
 
 </style>
