@@ -22,10 +22,6 @@
                 <div class="btn-next">下一象</div>
             </div>
 
-            <!--            <div class="btn-group">-->
-            <!--                <div class="btn-prev" slot="button-prev">上一象</div>-->
-            <!--                <div class="btn-next" slot="button-next">下一象</div>-->
-            <!--            </div>-->
         </swiper>
     </div>
 </template>
@@ -50,6 +46,7 @@
                 swiperOption: {
                     direction: 'vertical',
                     effect: 'flip',
+                    autoPlay:true,
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -162,12 +159,12 @@
             }
 
             .btn-home {
-                background: url("../assets/img/ico-home.svg") no-repeat center;
+                background: url("../assets/img/ico-context.svg") no-repeat center;
                 background-size: auto 100%;
             }
 
             .btn-context {
-                background: url("../assets/img/ico-context.svg") no-repeat center;
+                background: url("../assets/img/ico-home.svg") no-repeat center;
                 background-size: auto 100%;
             }
         }
