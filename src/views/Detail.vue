@@ -2,12 +2,19 @@
     <div class="detail">
         <transition name="slideIn">
             <div class="nav" v-if="isNav">
-                <navItem v-for="(item,index) in detail" :title="item.title" @click.native="nav(index)"/>
+                <navItem
+                        v-for="(item,index) in detail"
+                        :title="item.title"
+                        :class="{active:index == detailIndex}"
+                        @click.native="nav(index)"
+                        :key="index"
+                />
             </div>
         </transition>
         <div class="tool-bar">
             <div class="btn-home" @click="$router.push('/')"></div>
-            <div class="btn-context" @click="isNav = true"></div>
+            <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
+            <div class="btn-nav" @click="isNav = true"></div>
         </div>
         <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
         <div class="btn-group">
@@ -22,6 +29,7 @@
 </template>
 
 <script>
+    import screenfull from 'screenfull'
 
     import detailItem from '@/components/DetailItem'
     import tbNav from '@/components/Nav'
@@ -37,6 +45,7 @@
 
         data() {
             return {
+                isFullscreen: false,
                 detailIndex: 0,
                 isNav: false,
                 detail: [],
@@ -79,7 +88,11 @@
             nav(index) {
                 this.isNav = false
                 this.detailIndex = index
-            }
+            },
+            toggleFullscreen() {
+                screenfull.toggle()
+                this.isFullscreen = !this.isFullscreen
+            },
         }
     }
 </script>
@@ -96,7 +109,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             position: fixed;
-            width: 440px;
+            width: 360px;
             height: 100vh;
             top: 0;
             right: 0;
@@ -121,8 +134,8 @@
             z-index: 999;
 
             [class^='btn-'] {
-                width: 32px;
-                height: 32px;
+                width: 24px;
+                height: 24px;
                 cursor: pointer;
                 opacity: .8;
                 transition: all ease .4s;
@@ -133,7 +146,7 @@
 
                 &:hover {
                     opacity: 1;
-                    transform: scale(1.1);
+                    // transform: scale(1.1);
                 }
             }
 
@@ -142,8 +155,19 @@
                 background-size: auto 100%;
             }
 
-            .btn-context {
-                background: url("../assets/img/ico-home.svg") no-repeat center;
+            .btn-fullscreen {
+                background: url("../assets/img/ico-fullscreen.svg") no-repeat center;
+                background-size: auto 100%;
+            }
+
+            .btn-nav {
+                background: url("../assets/img/ico-nav.svg") no-repeat center;
+                background-size: auto 100%;
+            }
+
+
+            .isFullscreen {
+                background: url("../assets/img/ico-exitFullscreen.svg") no-repeat center;
                 background-size: auto 100%;
             }
         }

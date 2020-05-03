@@ -40,7 +40,7 @@
         padding: 16px 0;
         width: 64px;
         height: 480px;
-        background: #000;
+        background: $color-red;
         color: #fff;
         font-size: 20px;
         margin: 0 40px;
@@ -52,7 +52,7 @@
             content: '';
             width: 64px;
             height: 32px;
-            background: #000;
+            background: $color-red;
             left: 0;
             bottom: -40px;
         }

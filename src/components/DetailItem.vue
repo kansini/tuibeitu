@@ -62,6 +62,7 @@
                     display: block;
                     transition: all ease .6s;
                     cursor: pointer;
+                    height: 240px;
 
                     &:hover {
                         transform: scale(1.1);

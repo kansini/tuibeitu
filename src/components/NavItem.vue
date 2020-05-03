@@ -1,13 +1,7 @@
 <template>
     <div class="nav-item">
-        <div class="title">
-            <div>第{{title.sn}}象</div>
-            <div>{{title.ganzhi}}</div>
-        </div>
-        <div class="title">
-            <div>{{title.hexagrams1}}</div>
-            <div>{{title.hexagrams2}}</div>
-        </div>
+        <div>第{{title.sn}}象</div>
+        <div>{{title.ganzhi}}</div>
     </div>
 </template>
 
@@ -37,24 +31,39 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        padding: 16px 0;
-        width: 40px;
-        height: 240px;
-        background: $color-dark;
-        color: #fff;
-        font-size: 16px;
+        padding: 8px 0;
+        width: 32px;
+        height: 128px;
+        background: transparent;
+        border: 1px solid $color-dark;
+        color: $color-dark;
+        font-size: 14px;
         box-sizing: border-box;
         text-align: center;
+        border-radius: 6px;
         cursor: pointer;
+        transition: all ease .6s;
+
+        &:hover {
+            background: $color-dark;
+            color: #fff;
+            transform: scale(1.3);
+            z-index: 999;
+        }
+
+        div {
+            width: 16px;
+        }
+    }
+
+    .active {
+        background: $color-red;
+        color: #fff;
+        border: none;
 
 
-        .title {
-            width: 20px;
-
-
-            div:nth-child(1) {
-                margin-bottom: 8px;
-            }
+        &:hover {
+            background: $color-red;
         }
     }
 </style>
