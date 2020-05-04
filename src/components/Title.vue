@@ -2,7 +2,7 @@
     <div class="title">
         <div class="title-item">
             <div>第{{title.sn}}象</div>
-             <div>{{title.ganzhi}}</div>
+            <div>{{title.ganzhi}}</div>
         </div>
         <div class="title-item">
             <div>{{title.hexagrams1}}</div>
@@ -37,9 +37,8 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        padding: 16px 0;
         width: 64px;
-        height: 480px;
+        height: 520px;
         background: $color-red;
         color: #fff;
         font-size: 20px;
@@ -47,14 +46,24 @@
         box-sizing: border-box;
         text-align: center;
 
+        &::before {
+            display: block;
+            content: '';
+            width: 64px;
+            height: 16px;
+            border-bottom: 4px solid #fff;
+            background: $color-red;
+            box-sizing: border-box;
+
+        }
+
         &::after {
-            position: absolute;
             content: '';
             width: 64px;
             height: 32px;
             background: $color-red;
-            left: 0;
-            bottom: -40px;
+            border-top: 4px solid #fff;
+            box-sizing: border-box;
         }
 
         .title-item {
