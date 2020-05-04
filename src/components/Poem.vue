@@ -52,19 +52,19 @@
             color: #000;
             padding: 16px;
             border-left: 1px solid #333;
-            font-size: 20px;
+            font-size: 26px;
             box-sizing: border-box;
             text-align: center;
 
             &:last-child div:last-child::after {
                 position: absolute;
-                left: -6px;
-                bottom: -6px;
+                left: -4px;
+                bottom: 0px;
                 content: '';
                 width: 12px;
                 height: 12px;
                 border-radius: 16px;
-                box-shadow: 0 0 0 3px $color-dark;
+                box-shadow: 0 0 0 3px $color-red;
                 opacity: .8;
             }
 
@@ -80,7 +80,7 @@
             }
 
             .poem-title {
-                font-size: 24px;
+                font-size: 28px;
             }
         }
 

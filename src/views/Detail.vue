@@ -16,21 +16,23 @@
                 <intro @close="showIntro = false"/>
             </div>
         </transition>
-
-        <div class="tool-bar">
-            <div class="btn-home" @click="$router.push('/')"></div>
-            <div class="btn-nav" @click="showNav = true"></div>
-            <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
-            <div class="btn-tips" @click="showIntro = true"></div>
-        </div>
-        <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
-        <div class="btn-group">
-            <div class="btn-prev" @click="pre">上一象</div>
-            <div class="btn-play font-icons"
-                 @click="togglePlay">
-                {{playMsg}}
+        <div :class="{blur:showIntro}">
+            <div class="tool-bar">
+                <div class="btn-home" @click="$router.push('/')"></div>
+                <div class="btn-nav" @click="showNav = true"></div>
+                <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
+                <div class="btn-tips" @click="showIntro = true"></div>
             </div>
-            <div class="btn-next" @click="next">下一象</div>
+
+            <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
+            <div class="btn-group">
+                <div class="btn-prev" @click="pre">上一象</div>
+                <div class="btn-play font-icons"
+                     @click="togglePlay">
+                    {{playMsg}}
+                </div>
+                <div class="btn-next" @click="next">下一象</div>
+            </div>
         </div>
     </div>
 </template>
@@ -147,7 +149,7 @@
             height: 100vh;
             top: 0;
             right: 0;
-            background: #fff;
+            background: rgba(255, 255, 255, .85);
             z-index: 1000;
             padding: 16px 128px;
             box-sizing: border-box;
@@ -274,7 +276,9 @@
             }
         }
 
-
+        .blur {
+            filter: blur(10px);
+        }
     }
 
 </style>

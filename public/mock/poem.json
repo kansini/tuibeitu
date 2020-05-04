@@ -54,7 +54,7 @@
         ],
         [
           "一统定中原",
-          "陰盛陽先竭"
+          "阴盛阳先竭"
         ]
       ]
     }
@@ -64,7 +64,7 @@
       "sn": "三",
       "ganzhi": "丙寅",
       "hexagrams1": "艮下乾上",
-      "hexagrams2": "遯"
+      "hexagrams2": "遁"
     },
     "poem": {
       "predict": [
@@ -124,7 +124,7 @@
       "sn": "五",
       "ganzhi": "戊辰",
       "hexagrams1": "坤下乾上",
-      "hexagrams2": "觀"
+      "hexagrams2": "观"
     },
     "poem": {
       "predict": [
@@ -139,7 +139,7 @@
       ],
       "description": [
         [
-          "渔陽鼙鼓过潼关",
+          "渔阳鼙鼓过潼关",
           "此日君王幸剑山"
         ],
         [
@@ -154,7 +154,7 @@
       "sn": "六",
       "ganzhi": "已巳",
       "hexagrams1": "坤下艮上",
-      "hexagrams2": "剝"
+      "hexagrams2": "剥"
     },
     "poem": {
       "predict": [
@@ -163,7 +163,7 @@
           "非皇是皇"
         ],
         [
-          "陰霾既去",
+          "阴霾既去",
           "日月复光"
         ]
       ],
@@ -184,7 +184,7 @@
       "sn": "七",
       "ganzhi": "庚午",
       "hexagrams1": "震下乾上",
-      "hexagrams2": "無妄"
+      "hexagrams2": "无妄"
     },
     "poem": {
       "predict": [
@@ -213,13 +213,13 @@
     "title": {
       "sn": "八",
       "ganzhi": "辛未",
-      "hexagrams1": "坤下離上",
-      "hexagrams2": "晉"
+      "hexagrams1": "坤下离上",
+      "hexagrams2": "晋"
     },
     "poem": {
       "predict": [
         [
-          "攙槍血中土",
+          "搀枪血中土",
           "破贼还为贼"
         ],
         [
@@ -243,7 +243,7 @@
     "title": {
       "sn": "九",
       "ganzhi": "壬申",
-      "hexagrams1": "乾下離上",
+      "hexagrams1": "乾下离上",
       "hexagrams2": "大有"
     },
     "poem": {
@@ -303,8 +303,8 @@
     "title": {
       "sn": "十一",
       "ganzhi": "申戍",
-      "hexagrams1": "兌下坎上",
-      "hexagrams2": "節"
+      "hexagrams1": "兑下坎上",
+      "hexagrams2": "节"
     },
     "poem": {
       "predict": [
@@ -1143,8 +1143,8 @@
     "title": {
       "sn": "三九",
       "ganzhi": "壬寅",
-      "hexagrams1": "巽下兌上",
-      "hexagrams2": "頤"
+      "hexagrams1": "巽下兑上",
+      "hexagrams2": "颐"
     },
     "poem": {
       "predict": [
@@ -1174,7 +1174,7 @@
       "sn": "四十",
       "ganzhi": "癸卯",
       "hexagrams1": "巽下艮上",
-      "hexagrams2": "蠱"
+      "hexagrams2": "蛊"
     },
     "poem": {
       "predict": [
@@ -1213,7 +1213,7 @@
           "草木蕃殖"
         ],
         [
-          "陰陽反背",
+          "阴阳反背",
           "上土下日"
         ]
       ],
@@ -1263,7 +1263,7 @@
     "title": {
       "sn": "四三",
       "ganzhi": "丙午",
-      "hexagrams1": "巽下離上",
+      "hexagrams1": "巽下离上",
       "hexagrams2": "鼎"
     },
     "poem": {
@@ -1293,14 +1293,14 @@
     "title": {
       "sn": "四四",
       "ganzhi": "丁未",
-      "hexagrams1": "坎下離上",
-      "hexagrams2": "未濟"
+      "hexagrams1": "坎下离上",
+      "hexagrams2": "未济"
     },
     "poem": {
       "predict": [
         [
           "日月丽天",
-          "群陰慑服"
+          "群阴慑服"
         ],
         [
           "百灵来朝",
@@ -1354,12 +1354,12 @@
       "sn": "四六",
       "ganzhi": "己酉",
       "hexagrams1": "坎下巽上",
-      "hexagrams2": "渙"
+      "hexagrams2": "涣"
     },
     "poem": {
       "predict": [
         [
-          "黯黯陰霾",
+          "黯黯阴霾",
           "杀不用刀"
         ],
         [
@@ -1384,7 +1384,7 @@
       "sn": "四七",
       "ganzhi": "庚戌",
       "hexagrams1": "坎下乾上",
-      "hexagrams2": "訟"
+      "hexagrams2": "讼"
     },
     "poem": {
       "predict": [
@@ -1413,7 +1413,7 @@
     "title": {
       "sn": "四八",
       "ganzhi": "辛亥",
-      "hexagrams1": "離下乾上",
+      "hexagrams1": "离下乾上",
       "hexagrams2": "同人"
     },
     "poem": {
@@ -1503,13 +1503,13 @@
     "title": {
       "sn": "五一",
       "ganzhi": "甲寅",
-      "hexagrams1": "兌下坤上",
-      "hexagrams2": "臨"
+      "hexagrams1": "兑下坤上",
+      "hexagrams2": "临"
     },
     "poem": {
       "predict": [
         [
-          "陰陽和",
+          "阴阳和",
           "化以正"
         ],
         [
@@ -1549,11 +1549,11 @@
       ],
       "description": [
         [
-          "欃槍一點現東方",
+          "欃枪一點現東方",
           "吳楚依然有帝王"
         ],
         [
-          "門外客來終不久",
+          "門外客来終不久",
           "乾坤再造在角亢"
         ]
       ]
@@ -1564,23 +1564,23 @@
       "sn": "五三",
       "ganzhi": "丙辰",
       "hexagrams1": "乾下震上",
-      "hexagrams2": "大壯"
+      "hexagrams2": "大壮"
     },
     "poem": {
       "predict": [
         [
-          "關中天子",
-          "禮賢下士"
+          "关中天子",
+          "礼贤下士"
         ],
         [
-          "順天休命",
+          "顺天休命",
           "半老有子"
         ]
       ],
       "description": [
         [
-          "一個孝子自西來",
-          "手握乾綱天下安"
+          "一个孝子自西来",
+          "手握乾网天下安"
         ],
         [
           "域中两见旌旗美",
@@ -1593,7 +1593,7 @@
     "title": {
       "sn": "五四",
       "ganzhi": "丁巳",
-      "hexagrams1": "乾下兌上",
+      "hexagrams1": "乾下兑上",
       "hexagrams2": "夬"
     },
     "poem": {
@@ -1610,11 +1610,11 @@
       "description": [
         [
           "不分牛鼠和牛羊",
-          "去毛存鞟尚稱強"
+          "去毛存鞟尚称强"
         ],
         [
-          "寰中自有真龍出",
-          "九曲黃河水不黃"
+          "寰中自有真龙出",
+          "九曲黄河水不黄"
         ]
       ]
     }
@@ -1630,7 +1630,7 @@
       "predict": [
         [
           "懼則生戒",
-          "無遠勿屆"
+          "无遠勿屆"
         ],
         [
           "水邊有女",
@@ -1639,11 +1639,11 @@
       ],
       "description": [
         [
-          "覬覦神器終無用",
+          "覬覦神器終无用",
           "翼翼小心有臣眾"
         ],
         [
-          "轉危為安見節義",
+          "轉危為安見节義",
           "未必河山是我送"
         ]
       ]
@@ -1683,8 +1683,8 @@
     "title": {
       "sn": "五七",
       "ganzhi": "庚申",
-      "hexagrams1": "兌下兌上",
-      "hexagrams2": "兌"
+      "hexagrams1": "兑下兑上",
+      "hexagrams2": "兑"
     },
     "poem": {
       "predict": [
@@ -1743,7 +1743,7 @@
     "title": {
       "sn": "五九",
       "ganzhi": "壬戌",
-      "hexagrams1": "艮下兌上",
+      "hexagrams1": "艮下兑上",
       "hexagrams2": "咸"
     },
     "poem": {
@@ -1773,13 +1773,13 @@
     "title": {
       "sn": "六十",
       "ganzhi": "癸亥",
-      "hexagrams1": "坤下兌上",
+      "hexagrams1": "坤下兑上",
       "hexagrams2": "萃"
     },
     "poem": {
       "predict": [
         [
-          "一陰一陽",
+          "一阴一阳",
           "无终无始"
         ],
         [

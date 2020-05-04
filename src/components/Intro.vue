@@ -39,6 +39,7 @@
             font-size: 24px;
             line-height: 56px;
             text-indent: 2em;
+            margin-bottom: 16px;
         }
 
         .btn-close {
