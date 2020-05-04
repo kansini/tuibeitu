@@ -36,6 +36,7 @@
 
 <style lang="scss" scoped>
     .poem {
+        position: relative;
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-start;
@@ -46,7 +47,6 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            position: relative;
             width: 64px;
             height: 520px;
             color: #000;
@@ -55,17 +55,31 @@
             font-size: 20px;
             box-sizing: border-box;
             text-align: center;
-            //font-family: kangxizidianti;
+
+            &:last-child div:last-child::after {
+                position: absolute;
+                left: -6px;
+                bottom: -6px;
+                content: '';
+                width: 12px;
+                height: 12px;
+                border-radius: 16px;
+                box-shadow: 0 0 0 3px $color-dark;
+                opacity: .8;
+            }
+
 
             &:nth-child(1) {
                 border-right: 1px solid #333;
             }
 
             div {
+                position: relative;
                 width: 20px;
                 margin-bottom: 16px;
             }
-            .poem-title{
+
+            .poem-title {
                 font-size: 24px;
             }
         }

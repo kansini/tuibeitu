@@ -1,7 +1,7 @@
 <template>
     <div class="detail">
         <transition name="slideIn">
-            <div class="nav" v-if="isNav">
+            <div class="nav" v-if="showNav">
                 <navItem
                         v-for="(item,index) in detail"
                         :title="item.title"
@@ -11,10 +11,17 @@
                 />
             </div>
         </transition>
+        <transition name="slideIn">
+            <div class="intro" v-if="showIntro">
+                <intro @close="showIntro = false"/>
+            </div>
+        </transition>
+
         <div class="tool-bar">
             <div class="btn-home" @click="$router.push('/')"></div>
-            <div class="btn-nav" @click="isNav = true"></div>
+            <div class="btn-nav" @click="showNav = true"></div>
             <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
+            <div class="btn-tips" @click="showIntro = true"></div>
         </div>
         <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
         <div class="btn-group">
@@ -34,20 +41,23 @@
     import detailItem from '@/components/DetailItem'
     import tbNav from '@/components/Nav'
     import navItem from '@/components/NavItem'
+    import intro from '@/components/Intro'
 
     export default {
         name: "detail",
         components: {
             detailItem,
             tbNav,
-            navItem
+            navItem,
+            intro
         },
 
         data() {
             return {
                 isFullscreen: false,
                 detailIndex: 0,
-                isNav: false,
+                showNav: false,
+                showIntro: false,
                 detail: [],
                 playMsg: 'play_arrow',
                 autoplayFlag: false,
@@ -86,13 +96,24 @@
                 }
             },
             nav(index) {
-                this.isNav = false
+                this.showNav = false
                 this.detailIndex = index
             },
             toggleFullscreen() {
                 screenfull.toggle()
                 this.isFullscreen = !this.isFullscreen
             },
+            handleSpeak(str) {
+                let url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=2&text" + encodeURI(str)
+                let n = new Audio(url)
+                n.src = url
+
+                if (str) {
+                    n.play()
+                } else {
+                    n.pause()
+                }
+            }
         }
     }
 </script>
@@ -119,6 +140,19 @@
             padding: 8px;
             box-sizing: border-box;
         }
+
+        .intro {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            background: #fff;
+            z-index: 1000;
+            padding: 16px 128px;
+            box-sizing: border-box;
+        }
+
 
         .tool-bar {
             position: fixed;
@@ -165,6 +199,11 @@
                 background-size: auto 100%;
             }
 
+            .btn-tips {
+                background: url("../assets/img/ico-tip.svg") no-repeat center;
+                background-size: auto 100%;
+            }
+
 
             .isFullscreen {
                 background: url("../assets/img/ico-exitFullscreen.svg") no-repeat center;
@@ -180,7 +219,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            z-index: 9999;
+            z-index: 999;
 
             div:not(:last-child) {
                 margin-right: 64px;
