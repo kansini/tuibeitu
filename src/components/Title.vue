@@ -39,7 +39,7 @@
         position: relative;
         width: 64px;
         height: 520px;
-        background: #000;
+        background: $color-red;
         color: #fff;
         font-size: 24px;
         margin: 0 40px;
@@ -52,7 +52,7 @@
             width: 64px;
             height: 16px;
             border-bottom: 4px solid #fff;
-            background: #000;
+            background: $color-red;
             box-sizing: border-box;
 
         }
@@ -61,7 +61,7 @@
             content: '';
             width: 64px;
             height: 32px;
-            background: #000;
+            background: $color-red;
             border-top: 4px solid #fff;
             box-sizing: border-box;
         }
