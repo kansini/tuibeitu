@@ -27,6 +27,7 @@
 
 <style lang="scss">
     body {
+        //font-family: SentyTang;
         font-family: kangxizidianti;
     }
 </style>
