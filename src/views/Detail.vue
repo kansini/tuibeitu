@@ -13,8 +13,8 @@
         </transition>
         <div class="tool-bar">
             <div class="btn-home" @click="$router.push('/')"></div>
-            <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
             <div class="btn-nav" @click="isNav = true"></div>
+            <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
         </div>
         <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
         <div class="btn-group">

@@ -55,7 +55,7 @@
             font-size: 20px;
             box-sizing: border-box;
             text-align: center;
-            font-family: kangxizidianti;
+            //font-family: kangxizidianti;
 
             &:nth-child(1) {
                 border-right: 1px solid #333;
