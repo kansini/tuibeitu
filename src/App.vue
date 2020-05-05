@@ -28,6 +28,6 @@
 <style lang="scss">
     body {
         font-family: "xiaokai";
-       // font-family: kangxizidianti;
+        //font-family: kangxizidianti;
     }
 </style>
