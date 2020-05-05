@@ -22,8 +22,8 @@
                 <div class="btn-nav" @click="showNav = true"></div>
                 <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
                 <div class="btn-tips" @click="showIntro = true"></div>
+                <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
             </div>
-
             <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
             <div class="btn-group">
                 <div class="btn-prev" @click="pre">上一象</div>
@@ -203,6 +203,11 @@
 
             .btn-tips {
                 background: url("../assets/img/ico-tip.svg") no-repeat center;
+                background-size: auto 100%;
+            }
+
+            .btn-github {
+                background: url("../assets/img/logo-gihub.svg") no-repeat center;
                 background-size: auto 100%;
             }
 
