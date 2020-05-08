@@ -1,14 +1,23 @@
 <template>
     <div class="home">
-        <div class="cover"></div>
-        <div class="btn-enter" @click="$router.push('/detail')">推开</div>
+        <div class="cover">
+            <div class="btn-group">
+                <tbButton @click="$router.push('/detail')"/>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+    import loading from '@/components/Loading'
+    import tbButton from '@/components/kits/Button'
+
     export default {
         name: 'Home',
-        components: {}
+        components: {
+            loading,
+            tbButton
+        }
     }
 </script>
 <style lang="scss" scoped>
@@ -23,29 +32,36 @@
             background: url("../assets/img/cover.svg") no-repeat center;
             background-size: 160px auto;
             animation: cover 1s linear forwards;
-        }
 
-        .btn-enter {
-            position: absolute;
-            bottom: 25vh;
-            left: calc(50vw - 48px);
-            width: 96px;
-            padding: 8px 0;
-            font-size: 18px;
-            text-align: center;
-            //background: $color-light;
-            border: 1px solid #D0021B;
-            color: #D0021B;
-            border-radius: 200px;
-            z-index: 999;
-            cursor: pointer;
-            transition: all ease .4s;
+            .btn-group {
+                position: fixed;
+                align-items: center;
+                left: 0;
+                bottom: 56px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                z-index: 999;
 
-            &:hover {
-                color: #fff;
-                background: #D0021B;
+                div:not(:last-child) {
+                    margin-right: 64px;
+                }
+
+
+
+                .disable {
+                    opacity: .3;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        background: transparent;
+                        color: $color-red;
+                    }
+                }
             }
+
         }
+
     }
 
     @keyframes cover {

@@ -26,12 +26,13 @@
             </div>
             <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
             <div class="btn-group">
-                <div class="btn-prev" @click="pre">上一象</div>
-                <div class="btn-play font-icons"
-                     @click="togglePlay">
-                    {{playMsg}}
-                </div>
-                <div class="btn-next" @click="next">下一象</div>
+                <tbButton @click="pre" direction="top" text="上一象"/>
+                <tbButton @click="next" direction="bottom" text="下一象"/>
+<!--                <tbButton class="font-icons"-->
+<!--                     @click="togglePlay" :text="playMsg">-->
+
+<!--                </tbButton>-->
+
             </div>
         </div>
     </div>
@@ -44,6 +45,7 @@
     import tbNav from '@/components/Nav'
     import navItem from '@/components/NavItem'
     import intro from '@/components/Intro'
+    import tbButton from '@/components/kits/Button'
 
     export default {
         name: "detail",
@@ -51,7 +53,8 @@
             detailItem,
             tbNav,
             navItem,
-            intro
+            intro,
+            tbButton
         },
 
         data() {
@@ -228,28 +231,10 @@
             justify-content: center;
             z-index: 999;
 
-            div:not(:last-child) {
+            button:not(:last-child) {
                 margin-right: 64px;
             }
 
-            .btn-prev,
-            .btn-next {
-                width: 96px;
-                padding: 8px 0;
-                font-size: 18px;
-                text-align: center;
-                //background: $color-light;
-                border: 1px solid $color-red;
-                color: $color-red;
-                border-radius: 200px;
-                cursor: pointer;
-                transition: all ease .4s;
-
-                &:hover {
-                    color: #fff;
-                    background: $color-red;
-                }
-            }
 
             .btn-play {
                 width: 40px;
