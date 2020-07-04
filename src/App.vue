@@ -6,11 +6,17 @@
     </div>
 </template>
 <script>
+
+
     export default {
         name: 'App',
+        components: {
+
+        },
         data() {
             return {
-                transitionName: 'slide-left'
+                transitionName: 'slide-left',
+                isGrow: false
             }
         },
         watch: {
@@ -27,6 +33,7 @@
 
 <style lang="scss">
     body {
+         cursor: none;
         //font-family: "xiaokai";
         font-family: kangxizidianti;
     }

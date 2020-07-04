@@ -2,7 +2,7 @@
     <div class="detail-item">
         <div class="detail-content">
             <div class="figure">
-                <img :src="`./img/figure${index + 1}.svg`">
+                <img :src="`./img/figure${index + 1}.svg`"  @mouseover="onFigure" @mouseleave="leaveFigure">
             </div>
             <tb-title :title="detail.title"/>
             <tb-poem :poem="detail && detail.poem && detail.poem.predict"></tb-poem>
@@ -34,6 +34,15 @@
                     return {}
                 }
             }
+        },
+        methods: {
+            onFigure() {
+                this.$emit('onFigure')
+            },
+            leaveFigure() {
+                this.$emit('leaveFigure')
+            }
+
         }
     }
 </script>
@@ -61,11 +70,11 @@
                 img {
                     display: block;
                     transition: all ease .6s;
-                    cursor: pointer;
+                    // cursor: pointer;
                     height: 240px;
 
                     &:hover {
-                        transform: scale(1.1);
+                          transform: scale(1.2);
                     }
                 }
             }

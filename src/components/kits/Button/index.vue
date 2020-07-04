@@ -34,6 +34,7 @@
         border: none;
         outline: none;
         background: transparent;
+        overflow: hidden;
     }
 
     .tb-btn {
@@ -52,9 +53,25 @@
         transition: all ease .4s;
         font-family: inherit;
 
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: #D0021B;
+            opacity: 0;
+            transition: all ease .4s;
+        }
+
         &:hover {
             color: #fff;
-            background: #D0021B;
+        }
+
+        &:hover::before {
+            opacity: 1;
+            width: 100%;
         }
 
         div {
@@ -75,8 +92,8 @@
                     position: absolute;
                     right: -150%;
                     top: 0;
-                    transform: skewX(15deg);
-                    transition: transform .8s;
+                    transform: skewX(25deg);
+                    transition: transform 1s;
                     transform-origin: right top;
                 }
             }
@@ -108,13 +125,13 @@
 
             &::after {
                 right: 0;
-                top: -150%;
-                transform: skewY(-10deg);
+                top: -250%;
+                transform: skewY(-15deg);
             }
         }
 
         &:hover .top {
-            transform: translateY(150%);
+            transform: translateY(250%);
         }
 
         .bottom {
@@ -122,13 +139,13 @@
 
             &::after {
                 right: 0;
-                top: 150%;
+                top: 250%;
                 transform: skewY(15deg);
             }
         }
 
         &:hover .bottom {
-            transform: translateY(-150%);
+            transform: translateY(-250%);
         }
 
 

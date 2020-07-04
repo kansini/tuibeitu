@@ -1,5 +1,6 @@
 <template>
     <div class="detail">
+        <oh-cursor :size="cursorSize"/>
         <transition name="slideIn">
             <div class="nav" v-if="showNav">
                 <navItem
@@ -17,21 +18,21 @@
             </div>
         </transition>
         <div :class="{blur:showIntro}">
-            <div class="tool-bar">
-                <div class="btn-home" @click="$router.push('/')"></div>
+            <div class="tool-bar" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
                 <div class="btn-nav" @click="showNav = true"></div>
+                <div class="btn-home" @click="$router.push('/')"></div>
                 <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
                 <div class="btn-tips" @click="showIntro = true"></div>
                 <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
             </div>
-            <detail-item :detail="detail[detailIndex]" :index="detailIndex"/>
-            <div class="btn-group">
+            <detail-item :detail="detail[detailIndex]" :index="detailIndex"  @onFigure="cursorSize = 'large'" @leaveFigure="cursorSize = ''"/>
+            <div class="btn-group"  @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
                 <tbButton @click="pre" direction="top" text="上一象"/>
                 <tbButton @click="next" direction="bottom" text="下一象"/>
-<!--                <tbButton class="font-icons"-->
-<!--                     @click="togglePlay" :text="playMsg">-->
+                <!--                <tbButton class="font-icons"-->
+                <!--                     @click="togglePlay" :text="playMsg">-->
 
-<!--                </tbButton>-->
+                <!--                </tbButton>-->
 
             </div>
         </div>
@@ -40,6 +41,7 @@
 
 <script>
     import screenfull from 'screenfull'
+    import ohCursor from '@/components/kits/cursor'
 
     import detailItem from '@/components/DetailItem'
     import tbNav from '@/components/Nav'
@@ -54,7 +56,8 @@
             tbNav,
             navItem,
             intro,
-            tbButton
+            tbButton,
+            ohCursor
         },
 
         data() {
@@ -66,6 +69,7 @@
                 detail: [],
                 playMsg: 'play_arrow',
                 autoplayFlag: false,
+                cursorSize:''
             }
         },
         created() {
