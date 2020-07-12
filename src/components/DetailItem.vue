@@ -74,7 +74,7 @@
                     height: 240px;
 
                     &:hover {
-                          transform: scale(1.2);
+                          transform: scale(1.4);
                     }
                 }
             }

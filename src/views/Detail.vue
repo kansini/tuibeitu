@@ -25,8 +25,9 @@
                 <div class="btn-tips" @click="showIntro = true"></div>
                 <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
             </div>
-            <detail-item :detail="detail[detailIndex]" :index="detailIndex"  @onFigure="cursorSize = 'large'" @leaveFigure="cursorSize = ''"/>
-            <div class="btn-group"  @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
+            <detail-item :detail="detail[detailIndex]" :index="detailIndex" @onFigure="cursorSize = 'large'"
+                         @leaveFigure="cursorSize = ''"/>
+            <div class="btn-group" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
                 <tbButton @click="pre" direction="top" text="上一象"/>
                 <tbButton @click="next" direction="bottom" text="下一象"/>
                 <!--                <tbButton class="font-icons"-->
@@ -37,6 +38,7 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -69,7 +71,7 @@
                 detail: [],
                 playMsg: 'play_arrow',
                 autoplayFlag: false,
-                cursorSize:''
+                cursorSize: ''
             }
         },
         created() {

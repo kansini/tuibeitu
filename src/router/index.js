@@ -15,11 +15,22 @@ const routes = [
         path: '/detail',
         name: 'detail',
         component: () => import('@/views/Detail')
+    },
+    {
+        path: '/gadget',
+        name: 'Gadget',
+        component: () => import('@/views/Gadget')
+    },
+    {
+        path: '/fullPage',
+        name: 'FullPage',
+        component: () => import('@/views/Fullpage')
     }
+
 ]
 
 const router = new VueRouter({
-   // mode: 'history',
+    mode: 'history',
     base: process.env.BASE_URL,
     routes
 })

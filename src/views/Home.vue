@@ -13,13 +13,15 @@
     import loading from '@/components/Loading'
     import tbButton from '@/components/kits/Button'
     import ohCursor from '@/components/kits/cursor'
+    import pen from '@/components/kits/Pen'
 
     export default {
         name: 'Home',
         components: {
             loading,
             tbButton,
-            ohCursor
+            ohCursor,
+            pen
         },
         data() {
             return {
