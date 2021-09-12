@@ -3,9 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import VueAnimateNumber from 'vue-animate-number'
-
-Vue.use(VueAnimateNumber)
 
 axios.defaults.baseURL = './mock'
 

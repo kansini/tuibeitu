@@ -17,11 +17,6 @@ const routes = [
         component: () => import('@/views/Detail')
     },
     {
-        path: '/gadget',
-        name: 'Gadget',
-        component: () => import('@/views/Gadget')
-    },
-    {
         path: '/fullPage',
         name: 'FullPage',
         component: () => import('@/views/Fullpage')
