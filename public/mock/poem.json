@@ -2,7 +2,7 @@
   {
     "title": {
       "sn": "一",
-      "ganzhi": "甲子",
+      "ganZhi": "甲子",
       "hexagrams1": "乾下乾上",
       "hexagrams2": "乾"
     },
@@ -32,7 +32,7 @@
   {
     "title": {
       "sn": "二",
-      "ganzhi": "乙丑",
+      "ganZhi": "乙丑",
       "hexagrams1": "巽下乾上",
       "hexagrams2": "姤"
     },
@@ -62,7 +62,7 @@
   {
     "title": {
       "sn": "三",
-      "ganzhi": "丙寅",
+      "ganZhi": "丙寅",
       "hexagrams1": "艮下乾上",
       "hexagrams2": "遁"
     },
@@ -92,7 +92,7 @@
   {
     "title": {
       "sn": "四",
-      "ganzhi": "丁卯",
+      "ganZhi": "丁卯",
       "hexagrams1": "坤下乾上",
       "hexagrams2": "否"
     },
@@ -122,7 +122,7 @@
   {
     "title": {
       "sn": "五",
-      "ganzhi": "戊辰",
+      "ganZhi": "戊辰",
       "hexagrams1": "坤下乾上",
       "hexagrams2": "观"
     },
@@ -152,7 +152,7 @@
   {
     "title": {
       "sn": "六",
-      "ganzhi": "已巳",
+      "ganZhi": "已巳",
       "hexagrams1": "坤下艮上",
       "hexagrams2": "剥"
     },
@@ -182,7 +182,7 @@
   {
     "title": {
       "sn": "七",
-      "ganzhi": "庚午",
+      "ganZhi": "庚午",
       "hexagrams1": "震下乾上",
       "hexagrams2": "无妄"
     },
@@ -212,7 +212,7 @@
   {
     "title": {
       "sn": "八",
-      "ganzhi": "辛未",
+      "ganZhi": "辛未",
       "hexagrams1": "坤下离上",
       "hexagrams2": "晋"
     },
@@ -242,7 +242,7 @@
   {
     "title": {
       "sn": "九",
-      "ganzhi": "壬申",
+      "ganZhi": "壬申",
       "hexagrams1": "乾下离上",
       "hexagrams2": "大有"
     },
@@ -272,7 +272,7 @@
   {
     "title": {
       "sn": "十",
-      "ganzhi": "癸酉",
+      "ganZhi": "癸酉",
       "hexagrams1": "坎下坎上",
       "hexagrams2": "坎"
     },
@@ -302,7 +302,7 @@
   {
     "title": {
       "sn": "十一",
-      "ganzhi": "申戍",
+      "ganZhi": "申戍",
       "hexagrams1": "兑下坎上",
       "hexagrams2": "节"
     },
@@ -332,7 +332,7 @@
   {
     "title": {
       "sn": "十二",
-      "ganzhi": "乙亥",
+      "ganZhi": "乙亥",
       "hexagrams1": "震下坎上",
       "hexagrams2": "屯"
     },
@@ -362,7 +362,7 @@
   {
     "title": {
       "sn": "十三",
-      "ganzhi": "丙子",
+      "ganZhi": "丙子",
       "hexagrams1": "离下坎上",
       "hexagrams2": "既济"
     },
@@ -392,7 +392,7 @@
   {
     "title": {
       "sn": "十四",
-      "ganzhi": "丁丑",
+      "ganZhi": "丁丑",
       "hexagrams1": "离下兑上",
       "hexagrams2": "革"
     },
@@ -422,7 +422,7 @@
   {
     "title": {
       "sn": "十五",
-      "ganzhi": "戊寅",
+      "ganZhi": "戊寅",
       "hexagrams1": "离下震上",
       "hexagrams2": "丰"
     },
@@ -452,7 +452,7 @@
   {
     "title": {
       "sn": "十六",
-      "ganzhi": "己卯",
+      "ganZhi": "己卯",
       "hexagrams1": "离下坤上",
       "hexagrams2": "明夷"
     },
@@ -482,7 +482,7 @@
   {
     "title": {
       "sn": "十七",
-      "ganzhi": "庚辰",
+      "ganZhi": "庚辰",
       "hexagrams1": "坎下坤上",
       "hexagrams2": "师"
     },
@@ -512,7 +512,7 @@
   {
     "title": {
       "sn": "十八",
-      "ganzhi": "辛巳",
+      "ganZhi": "辛巳",
       "hexagrams1": "艮下艮上",
       "hexagrams2": "艮"
     },
@@ -542,7 +542,7 @@
   {
     "title": {
       "sn": "十九",
-      "ganzhi": "壬午",
+      "ganZhi": "壬午",
       "hexagrams1": "离下艮上",
       "hexagrams2": "贲"
     },
@@ -572,7 +572,7 @@
   {
     "title": {
       "sn": "二十",
-      "ganzhi": "癸未",
+      "ganZhi": "癸未",
       "hexagrams1": "离上乾下",
       "hexagrams2": "同人"
     },
@@ -602,7 +602,7 @@
   {
     "title": {
       "sn": "二一",
-      "ganzhi": "甲申",
+      "ganZhi": "甲申",
       "hexagrams1": "兑下艮下",
       "hexagrams2": "损"
     },
@@ -632,7 +632,7 @@
   {
     "title": {
       "sn": "二二",
-      "ganzhi": "乙酉",
+      "ganZhi": "乙酉",
       "hexagrams1": "兑下离上",
       "hexagrams2": "睽"
     },
@@ -662,7 +662,7 @@
   {
     "title": {
       "sn": "二三",
-      "ganzhi": "丙戍",
+      "ganZhi": "丙戍",
       "hexagrams1": "兑下乾上",
       "hexagrams2": "履"
     },
@@ -692,7 +692,7 @@
   {
     "title": {
       "sn": "二四",
-      "ganzhi": "丁亥",
+      "ganZhi": "丁亥",
       "hexagrams1": "兑上巽下",
       "hexagrams2": "中孚"
     },
@@ -722,7 +722,7 @@
   {
     "title": {
       "sn": "二五",
-      "ganzhi": "戊子",
+      "ganZhi": "戊子",
       "hexagrams1": "艮下巽上",
       "hexagrams2": "渐"
     },
@@ -752,7 +752,7 @@
   {
     "title": {
       "sn": "二六",
-      "ganzhi": "己丑",
+      "ganZhi": "己丑",
       "hexagrams1": "震下震上",
       "hexagrams2": "震"
     },
@@ -782,7 +782,7 @@
   {
     "title": {
       "sn": "二七",
-      "ganzhi": "庚寅",
+      "ganZhi": "庚寅",
       "hexagrams1": "乾上震下",
       "hexagrams2": "豫"
     },
@@ -812,7 +812,7 @@
   {
     "title": {
       "sn": "二八",
-      "ganzhi": "辛卯",
+      "ganZhi": "辛卯",
       "hexagrams1": "坎下震上",
       "hexagrams2": "解"
     },
@@ -842,7 +842,7 @@
   {
     "title": {
       "sn": "二九",
-      "ganzhi": "壬辰",
+      "ganZhi": "壬辰",
       "hexagrams1": "巽下震上",
       "hexagrams2": "恒"
     },
@@ -872,7 +872,7 @@
   {
     "title": {
       "sn": "三十",
-      "ganzhi": "癸巳",
+      "ganZhi": "癸巳",
       "hexagrams1": "巽下坤上",
       "hexagrams2": "升"
     },
@@ -902,7 +902,7 @@
   {
     "title": {
       "sn": "三一",
-      "ganzhi": "甲午",
+      "ganZhi": "甲午",
       "hexagrams1": " 离下巽上",
       "hexagrams2": "家人"
     },
@@ -932,7 +932,7 @@
   {
     "title": {
       "sn": "三二",
-      "ganzhi": "乙未",
+      "ganZhi": "乙未",
       "hexagrams1": "巽下坎上",
       "hexagrams2": "井"
     },
@@ -962,7 +962,7 @@
   {
     "title": {
       "sn": "三三",
-      "ganzhi": "丙申",
+      "ganZhi": "丙申",
       "hexagrams1": "巽下兑上",
       "hexagrams2": "大过"
     },
@@ -992,7 +992,7 @@
   {
     "title": {
       "sn": "三四",
-      "ganzhi": "丁酉",
+      "ganZhi": "丁酉",
       "hexagrams1": "巽下巽上",
       "hexagrams2": "巽"
     },
@@ -1022,7 +1022,7 @@
   {
     "title": {
       "sn": "三五",
-      "ganzhi": "戊戌",
+      "ganZhi": "戊戌",
       "hexagrams1": "震下兑上",
       "hexagrams2": "随"
     },
@@ -1052,7 +1052,7 @@
   {
     "title": {
       "sn": "三六",
-      "ganzhi": "己亥",
+      "ganZhi": "己亥",
       "hexagrams1": "乾下巽上",
       "hexagrams2": "小畜"
     },
@@ -1082,7 +1082,7 @@
   {
     "title": {
       "sn": "三七",
-      "ganzhi": "庚子",
+      "ganZhi": "庚子",
       "hexagrams1": "震下巽上",
       "hexagrams2": "益"
     },
@@ -1112,7 +1112,7 @@
   {
     "title": {
       "sn": "三八",
-      "ganzhi": "辛丑",
+      "ganZhi": "辛丑",
       "hexagrams1": "震下离上",
       "hexagrams2": "噬嗑"
     },
@@ -1142,7 +1142,7 @@
   {
     "title": {
       "sn": "三九",
-      "ganzhi": "壬寅",
+      "ganZhi": "壬寅",
       "hexagrams1": "巽下兑上",
       "hexagrams2": "颐"
     },
@@ -1172,7 +1172,7 @@
   {
     "title": {
       "sn": "四十",
-      "ganzhi": "癸卯",
+      "ganZhi": "癸卯",
       "hexagrams1": "巽下艮上",
       "hexagrams2": "蛊"
     },
@@ -1202,7 +1202,7 @@
   {
     "title": {
       "sn": "四一",
-      "ganzhi": "甲辰",
+      "ganZhi": "甲辰",
       "hexagrams1": "离下离上",
       "hexagrams2": "离"
     },
@@ -1232,7 +1232,7 @@
   {
     "title": {
       "sn": "四二",
-      "ganzhi": "乙巳",
+      "ganZhi": "乙巳",
       "hexagrams1": "艮下离上",
       "hexagrams2": "旅"
     },
@@ -1262,7 +1262,7 @@
   {
     "title": {
       "sn": "四三",
-      "ganzhi": "丙午",
+      "ganZhi": "丙午",
       "hexagrams1": "巽下离上",
       "hexagrams2": "鼎"
     },
@@ -1292,7 +1292,7 @@
   {
     "title": {
       "sn": "四四",
-      "ganzhi": "丁未",
+      "ganZhi": "丁未",
       "hexagrams1": "坎下离上",
       "hexagrams2": "未济"
     },
@@ -1322,7 +1322,7 @@
   {
     "title": {
       "sn": "四五",
-      "ganzhi": "戊申",
+      "ganZhi": "戊申",
       "hexagrams1": "坎下艮上",
       "hexagrams2": "蒙"
     },
@@ -1352,7 +1352,7 @@
   {
     "title": {
       "sn": "四六",
-      "ganzhi": "己酉",
+      "ganZhi": "己酉",
       "hexagrams1": "坎下巽上",
       "hexagrams2": "涣"
     },
@@ -1382,7 +1382,7 @@
   {
     "title": {
       "sn": "四七",
-      "ganzhi": "庚戌",
+      "ganZhi": "庚戌",
       "hexagrams1": "坎下乾上",
       "hexagrams2": "讼"
     },
@@ -1412,7 +1412,7 @@
   {
     "title": {
       "sn": "四八",
-      "ganzhi": "辛亥",
+      "ganZhi": "辛亥",
       "hexagrams1": "离下乾上",
       "hexagrams2": "同人"
     },
@@ -1442,7 +1442,7 @@
   {
     "title": {
       "sn": "四九",
-      "ganzhi": "壬子",
+      "ganZhi": "壬子",
       "hexagrams1": "坤下坤上",
       "hexagrams2": "坤"
     },
@@ -1472,7 +1472,7 @@
   {
     "title": {
       "sn": "五十",
-      "ganzhi": "癸丑",
+      "ganZhi": "癸丑",
       "hexagrams1": "震下坤上",
       "hexagrams2": "复"
     },
@@ -1502,7 +1502,7 @@
   {
     "title": {
       "sn": "五一",
-      "ganzhi": "甲寅",
+      "ganZhi": "甲寅",
       "hexagrams1": "兑下坤上",
       "hexagrams2": "临"
     },
@@ -1532,7 +1532,7 @@
   {
     "title": {
       "sn": "五二",
-      "ganzhi": "乙卯",
+      "ganZhi": "乙卯",
       "hexagrams1": "乾下坤上",
       "hexagrams2": "泰"
     },
@@ -1562,7 +1562,7 @@
   {
     "title": {
       "sn": "五三",
-      "ganzhi": "丙辰",
+      "ganZhi": "丙辰",
       "hexagrams1": "乾下震上",
       "hexagrams2": "大壮"
     },
@@ -1592,7 +1592,7 @@
   {
     "title": {
       "sn": "五四",
-      "ganzhi": "丁巳",
+      "ganZhi": "丁巳",
       "hexagrams1": "乾下兑上",
       "hexagrams2": "夬"
     },
@@ -1622,7 +1622,7 @@
   {
     "title": {
       "sn": "五五",
-      "ganzhi": "戊午",
+      "ganZhi": "戊午",
       "hexagrams1": "乾下坎上",
       "hexagrams2": "需"
     },
@@ -1652,7 +1652,7 @@
   {
     "title": {
       "sn": "五六",
-      "ganzhi": "己未",
+      "ganZhi": "己未",
       "hexagrams1": "坤下坎上",
       "hexagrams2": "比"
     },
@@ -1682,7 +1682,7 @@
   {
     "title": {
       "sn": "五七",
-      "ganzhi": "庚申",
+      "ganZhi": "庚申",
       "hexagrams1": "兑下兑上",
       "hexagrams2": "兑"
     },
@@ -1712,7 +1712,7 @@
   {
     "title": {
       "sn": "五八",
-      "ganzhi": "辛酉",
+      "ganZhi": "辛酉",
       "hexagrams1": "坎下兑上",
       "hexagrams2": "困"
     },
@@ -1742,7 +1742,7 @@
   {
     "title": {
       "sn": "五九",
-      "ganzhi": "壬戌",
+      "ganZhi": "壬戌",
       "hexagrams1": "艮下兑上",
       "hexagrams2": "咸"
     },
@@ -1772,7 +1772,7 @@
   {
     "title": {
       "sn": "六十",
-      "ganzhi": "癸亥",
+      "ganZhi": "癸亥",
       "hexagrams1": "坤下兑上",
       "hexagrams2": "萃"
     },

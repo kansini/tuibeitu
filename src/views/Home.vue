@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <pen />
     <oh-cursor :size="cursorSize"/>
     <div class="cover" ref="cover">
     </div>
