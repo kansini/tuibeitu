@@ -1,0 +1,116 @@
+.slideIn-enter-active,
+.slideIn-enter-active-leave-active {
+  transition: all ease-in-out .6s;
+}
+
+.slideIn-enter-from,
+.slideIn-leave-to {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+
+.fadeDown-enter-active,
+.fadeDown-leave-active,
+.fadeUp-enter-active,
+.fadeUp-leave-active {
+  transition: opacity .4s ease, transform .3s ease, filter .2s ease-in;
+}
+
+.fadeLeft-enter-active,
+.fadeLeft-leave-active,
+.fadeRight-enter-active,
+.fadeRight-leave-active {
+  transition: opacity .3s ease, transform .2s ease-in;
+}
+
+.fadeRight-enter-from,
+.fadeRight-leave-to {
+  transform: translate(50%, 0);
+  opacity: 0;
+}
+
+.fadeLeft-enter-from,
+.fadeLeft-leave-to {
+  transform: translate(-50%, 0);
+  opacity: 0;
+}
+
+.fadeDown-enter-from,
+.fadeDown-leave-to {
+  transform: translate(0, -100%);
+  opacity: 0;
+  filter: blur(8px);
+}
+
+.fadeUp-enter-from,
+.fadeUp-leave-to {
+  transform: translate(0, 100%);
+  opacity: 0;
+  filter: blur(8px);
+}
+
+.scaleIn-enter-active,
+.scaleIn-leave-active {
+  transition: opacity .4s ease, transform .5s ease;
+}
+
+.scaleIn-enter-from,
+.scaleIn-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.fadeIn-enter-active,
+.fadeIn-leave-active {
+  transition: opacity .2s ease, filter .5s ease-in;
+}
+
+.fadeIn-enter-from,
+.fadeIn-leave-to {
+  opacity: 0;
+  filter: blur(12px);
+}
+
+.slideUp-leave-active,
+.slideUp-enter {
+  opacity: 0;
+  transform: translateY(400%);
+  perspective: 100px;
+}
+
+.slide-down-leave-active,
+.slide-down-enter {
+  opacity: 0;
+  transform: translateY(-200%);
+  perspective: 100px;
+}
+
+.slide-right-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translateX(200%);
+  perspective: 100px;
+}
+
+.slide-left-leave-active,
+.slide-left-enter {
+  opacity: 0;
+  transform: translateX(-200%);
+  perspective: 100px;
+}
+
+.slide-in-enter-active,
+.slide-in-leave-active {
+  transition: all ease-in-out .1s;
+
+
+}
+
+.slide-in-leave-active,
+.slide-in-enter {
+  transition: all ease-in-out .2s;
+  opacity: 0;
+  transform: scale(0);
+
+}

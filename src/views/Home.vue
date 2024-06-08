@@ -1,49 +1,28 @@
 <template>
   <div class="home">
-    <oh-cursor :size="cursorSize"/>
-    <div class="cover" ref="cover">
-    </div>
+    <tb-cursor :size="cursorSize" :text="cursorText"/>
+    <div class="cover" ref="cover" @mouseenter="cursorSize = 'large'"></div>
     <div class="btn-group" ref="btn">
-      <tb-button @click="$router.push('/detail')"/>
+      <tb-button
+          @mouseenter="cursorSize = 'small'"
+          @click="handleEnter"
+      />
     </div>
   </div>
 </template>
 
-<script>
-import loading from '@/components/Loading'
-import tbButton from '@/components/kits/Button'
-import ohCursor from '@/components/kits/cursor'
-import pen from '@/components/kits/Pen'
+<script lang="ts" setup>
+import {ref} from "vue";
+import {useRouter} from "vue-router";
+import TbButton from "@/components/kits/Button.vue";
+import TbCursor from "@/components/kits/CustomCursor.vue";
 
-export default {
-  name: 'Home',
-  components: {
-    loading,
-    tbButton,
-    ohCursor,
-    pen
-  },
-  data() {
-    return {
-      cursorSize: ""
-    }
-  },
-  mounted() {
-    let btn = this.$refs.btn
-    let cover = this.$refs.cover
-    btn.addEventListener('mouseover', () => {
-      this.cursorSize = "small"
-    })
-    btn.addEventListener('mouseleave', () => {
-      this.cursorSize = ""
-    })
-    cover.addEventListener('mouseover', () => {
-      this.cursorSize = "large"
-    })
-    cover.addEventListener('mouseleave', () => {
-      this.cursorSize = ""
-    })
-  }
+const cursorSize = ref('large')
+const cursorText = ref('「推背圖」·李淳風 ｜ 袁天罡·「推背圖」·李淳風 ｜ 袁天罡·')
+
+const router = useRouter()
+const handleEnter = () => {
+  router.push('/detail')
 }
 </script>
 <style lang="scss" scoped>

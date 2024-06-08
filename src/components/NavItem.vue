@@ -5,28 +5,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "NavItem",
-  props: {
-    title: {
-      type: Object,
-      default: () => {
-        return {
-          "sn": "一",
-          "ganZhi": "甲子",
-          "hexagrams1": "乾下乾上",
-          "hexagrams2": "乾"
-        }
-      }
-    }
-  },
-  methods:{
-    handleClick(){
-      this.$emit('click')
-    }
-  }
+<script lang="ts" setup>
+import {ITitle} from "@/types/data"
+
+const emit = defineEmits(['click'])
+const handleClick = () => {
+  emit('click')
 }
+defineProps({
+  title: {
+    type: Object as () => ITitle,
+    default: () => {}
+  }
+})
 </script>
 
 <style lang="scss" scoped>

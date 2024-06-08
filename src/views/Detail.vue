@@ -1,123 +1,75 @@
 <template>
   <div class="detail">
-    <oh-cursor :size="cursorSize"/>
-    <tb-nav :visible.sync="showNav" :data="detail" :detail-index="detailIndex" @click="nav"/>
-    <transition name="slideIn">
-      <div class="intro" v-if="showIntro">
-        <intro @close="showIntro = false"/>
-      </div>
-    </transition>
-    <div :class="{blur:showIntro}">
-      <div class="tool-bar" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
-        <div class="btn-nav" @click="showNav = true"></div>
-        <div class="btn-home" @click="$router.push('/')"></div>
-        <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
-        <div class="btn-tips" @click="showIntro = true"></div>
-        <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
-      </div>
-      <detail-item :detail="detail[detailIndex]" :index="detailIndex" @onFigure="cursorSize = 'large'"
-                   @leaveFigure="cursorSize = ''"/>
-      <div class="btn-group" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
-        <tb-button @click="pre" direction="top" text="上一象"/>
-        <tb-button @click="next" direction="bottom" text="下一象"/>
-        <tb-button
-            class="font-icons"
-            @click="togglePlay"
-            :text="playMsg">
-
-        </tb-button>
-
-      </div>
+    <tb-nav
+        v-model="showNav"
+        :data="detail"
+        :detail-index="detailIndex"
+        @click="nav"
+    />
+    <intro @close="showIntro = false" v-model="showIntro"/>
+    <div class="tool-bar" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
+      <div class="btn-nav" @click="showNav = true"></div>
+      <div class="btn-home" @click="$router.push('/')"></div>
+      <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}"></div>
+      <div class="btn-tips" @click="showIntro = true"></div>
+      <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
+    </div>
+    <detail-item
+        :detail="detail[detailIndex]"
+        :index="detailIndex"
+    />
+    <div class="btn-group" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
+      <tb-button @click="pre" direction="top" text="上一象"/>
+      <tb-button @click="next" direction="bottom" text="下一象"/>
     </div>
   </div>
 
 </template>
 
-<script>
-import fullscreen from 'screenfull'
-import ohCursor from '@/components/kits/cursor'
-import detailItem from '@/components/DetailItem'
-import tbNav from '@/components/Nav'
-// import navItem from '@/components/NavItem'
-import intro from '@/components/Intro'
-import tbButton from '@/components/kits/Button'
+<script lang="ts" setup>
+import detailItem from '@/components/DetailItem.vue'
+import tbNav from '@/components/Nav.vue'
+import intro from '@/components/Intro.vue'
+import tbButton from '@/components/kits/Button.vue'
+import {onMounted, reactive, ref} from "vue";
+import {getList} from "@/api/getList";
 
-export default {
-  name: "detail",
-  components: {
-    detailItem,
-    tbNav,
-    // navItem,
-    intro,
-    tbButton,
-    ohCursor
-  },
+const isFullscreen = ref(false)
+const detailIndex = ref(0)
+const showNav = ref(false)
+const showIntro = ref(false)
+const detail = reactive<any[]>([])
+const cursorSize = ref('')
+const pre = () => {
+  if (detailIndex.value > 0) {
+    detailIndex.value -= 1
+  } else {
+    detailIndex.value = detail.length - 1
+  }
 
-  data() {
-    return {
-      isFullscreen: false,
-      detailIndex: 0,
-      showNav: false,
-      showIntro: false,
-      detail: [],
-      playMsg: 'play_arrow',
-      autoplayFlag: false,
-      cursorSize: ''
-    }
-  },
-  created() {
-    this.getDetail()
-  },
-  computed: {},
-  methods: {
-    getDetail() {
-      this.$axios.get('poem.json')
-          .then(res => this.detail = res.data)
-    },
-    pre() {
-      if (this.detailIndex > 0) {
-        this.detailIndex -= 1
-      } else {
-        this.detailIndex = this.detail.length - 1
-      }
-
-    },
-    next() {
-      if (this.detailIndex < this.detail.length - 1) {
-        this.detailIndex += 1
-      } else {
-        this.detailIndex = 0
-      }
-    },
-    togglePlay() {
-      this.autoplayFlag = !this.autoplayFlag
-      if (this.autoplayFlag) {
-        this.playMsg = 'pause'
-      } else {
-        this.playMsg = 'play_arrow'
-      }
-    },
-    nav(index) {
-      this.showNav = false
-      this.detailIndex = index
-    },
-    toggleFullscreen() {
-      fullscreen.toggle()
-      this.isFullscreen = !this.isFullscreen
-    },
-    handleSpeak(str) {
-      let url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=2&text" + encodeURI(str)
-      let n = new Audio(url)
-      n.src = url
-
-      if (str) {
-        n.play()
-      } else {
-        n.pause()
-      }
-    }
+}
+const next = () => {
+  if (detailIndex.value < detail.length - 1) {
+    detailIndex.value += 1
+  } else {
+    detailIndex.value = 0
   }
 }
+const nav = (index: number) => {
+  showNav.value = false
+  detailIndex.value = index
+}
+
+const getDetail = () => {
+  getList('poem.json').then((res: any) => {
+    Object.assign(detail, res.data)
+    console.log(res.data)
+  })
+
+}
+onMounted(() => {
+  getDetail()
+})
 </script>
 
 <style lang="scss" scoped>
@@ -227,30 +179,7 @@ body {
     display: flex;
     justify-content: center;
     z-index: 999;
-
-    button:not(:last-child) {
-      margin-right: 64px;
-    }
-
-
-    .btn-play {
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      border-radius: 40px;
-      color: #fff;
-      background: $color-red;
-      transition: all ease .4s;
-      text-align: center;
-      font-size: 30px;
-      cursor: pointer;
-
-      &:hover {
-        color: #fff;
-        background: $color-red;
-      }
-
-    }
+    gap: 64px;
 
     .disable {
       opacity: .3;
@@ -263,9 +192,6 @@ body {
     }
   }
 
-  .blur {
-    filter: blur(10px);
-  }
 }
 
 </style>

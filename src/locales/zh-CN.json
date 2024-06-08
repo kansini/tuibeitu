@@ -1,0 +1,12 @@
+{
+  "common": {
+    "submit": "提交"
+  },
+  "login":{
+    "login":"登录"
+  },
+	"http":{
+		"serverException": "服务器异常!",
+		"processing": "正在处理中，请勿重复操作"
+	}
+}

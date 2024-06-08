@@ -1,5 +1,5 @@
 <template>
-  <transition name="slideIn">
+  <transition name="fadeRight">
     <div class="nav" v-if="visible">
       <nav-item
           v-for="(item,index) in data"
@@ -12,40 +12,27 @@
   </transition>
 </template>
 
-<script>
-import navItem from './NavItem'
+<script lang="ts" setup>
+import navItem from "./NavItem.vue";
+import {IItem} from "@/types/data";
 
-export default {
-  name: "TbNav",
-  components: {
-    navItem
-  },
-  props: {
-    data: {
-      type: Array,
-      default: () => {
-        return []
-      }
-    },
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    detailIndex: {
-      type: Number,
-      default: 0
-    },
-
-  },
-  methods: {
-    handleClick(index) {
-      this.$emit('click', index)
-    }
-  }
-
+const visible = defineModel()
+const emit = defineEmits(['click'])
+const handleClick = (index: number) => {
+  emit('click', index)
 }
+
+defineProps({
+  data: {
+    type: Array as () => IItem[],
+    default: () => {
+      return []
+    }
+  },
+  detailIndex: {
+    type: Number,
+    default: 0
+  }
+})
 </script>
 
-<style lang="scss" scoped>
-
-</style>

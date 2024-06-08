@@ -1,0 +1,12 @@
+{
+  "common": {
+    "submit": "Submit"
+  },
+  "login":{
+    "login":"Login"
+  },
+	"http":{
+		"serverException": "Server Exception!",
+		"processing": "Do not repeat operations while processing"
+	}
+}

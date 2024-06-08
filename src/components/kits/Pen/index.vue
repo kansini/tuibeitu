@@ -8,10 +8,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "pen"
-}
+<script lang="ts" setup>
+
 </script>
 
 <style lang="scss" scoped>
@@ -20,7 +18,7 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(300%, -50%);
-  font-family: PingFang;
+  font-family: PingFang, serif;
 
   .pen-body {
     position: relative;

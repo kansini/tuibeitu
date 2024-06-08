@@ -1,5 +1,9 @@
 <template>
-  <button class="tb-btn" @click="handleToButton">
+  <button
+      class="tb-btn"
+      @click="handleToButton"
+      @mouseenter="handleMouseEnter"
+  >
     <div>
       <span :data-text="text" :class="direction">
         {{ text }}
@@ -8,24 +12,23 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: "TbButton",
-  props: {
-    text: {
-      type: String,
-      default: '推开'
-    },
-    direction: {
-      type: String,
-      default: ''
-    }
+<script lang="ts" setup>
+defineProps({
+  text: {
+    type: String,
+    default: '推開'
   },
-  methods: {
-    handleToButton() {
-      this.$emit('click')
-    }
+  direction: {
+    type: String,
+    default: ''
   }
+})
+const emit = defineEmits(['click', 'mouseenter'])
+const handleToButton = () => {
+  emit('click')
+}
+const handleMouseEnter = () => {
+  emit('mouseenter')
 }
 </script>
 
