@@ -15,6 +15,7 @@
       <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
     </div>
     <detail-item
+        @click="showNav = false"
         :detail="detail[detailIndex]"
         :index="detailIndex"
     />
@@ -78,23 +79,6 @@ body {
 }
 
 .detail {
-
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: fixed;
-    width: 360px;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    background: #fff;
-    box-shadow: 0 0 100px 0 $color-light;
-    z-index: 1000;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-
   .intro {
     position: fixed;
     width: 100%;
@@ -104,7 +88,7 @@ body {
     background: rgba(255, 255, 255, .85);
     z-index: 1000;
     padding: 16px 128px;
-    box-sizing: border-box;
+
   }
 
 
@@ -118,7 +102,7 @@ body {
     width: 100%;
     height: 64px;
     padding: 16px;
-    box-sizing: border-box;
+
     z-index: 999;
 
     [class^='btn-'] {

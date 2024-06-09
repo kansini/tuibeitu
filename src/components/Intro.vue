@@ -41,12 +41,12 @@ const handleClose = () => {
   .title {
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    font-size: 38px;
     padding: 24px 0;
   }
 
   p {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 2;
     text-indent: 2em;
     margin-bottom: 16px;

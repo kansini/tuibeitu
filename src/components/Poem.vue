@@ -46,7 +46,7 @@ defineProps({
     padding: 16px;
     border-left: 1px solid #333;
     font-size: 26px;
-    box-sizing: border-box;
+
     text-align: center;
 
     &:last-child div:last-child::after {

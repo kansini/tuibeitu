@@ -42,7 +42,7 @@ defineProps({
   color: #fff;
   font-size: 24px;
   margin: 0 40px;
-  box-sizing: border-box;
+
   text-align: center;
 
   &::before {
@@ -52,7 +52,7 @@ defineProps({
     height: 16px;
     border-bottom: 4px solid #fff;
     background: $color-red;
-    box-sizing: border-box;
+
 
   }
 
@@ -62,7 +62,7 @@ defineProps({
     height: 32px;
     background: $color-red;
     border-top: 4px solid #fff;
-    box-sizing: border-box;
+
   }
 
   .title-item {

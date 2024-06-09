@@ -29,12 +29,12 @@ defineProps({
   position: relative;
   padding: 8px 0;
   width: 32px;
-  height: 128px;
+  height: 120px;
   background: transparent;
   border: 1px solid $color-dark;
   color: $color-dark;
-  font-size: 14px;
-  box-sizing: border-box;
+  font-size: 12px;
+
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
