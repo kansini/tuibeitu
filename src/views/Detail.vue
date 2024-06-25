@@ -66,7 +66,7 @@ const nav = (index: number) => {
 const getDetail = () => {
   getList('poem.json').then((res: any) => {
     Object.assign(detail, res.data)
-    console.log(res.data)
+    // console.log(res.data)
   })
 
 }
