@@ -4,9 +4,11 @@
       <div class="figure">
         <img :src="`./img/figure${index + 1}.svg`" alt="">
       </div>
-      <tb-title :title="detail.title"/>
-      <tb-poem :poem="detail && detail.poem && detail.poem.predict"></tb-poem>
-      <tb-poem title="颂曰" :poem="detail && detail.poem && detail.poem.description"></tb-poem>
+      <div class="detail-content-desc">
+        <tb-poem :poem="detail.poem?.predict"/>
+        <tb-poem title="颂曰" :poem="detail.poem?.description"/>
+        <tb-title :title="detail.title"/>
+      </div>
     </div>
   </div>
 
@@ -63,6 +65,16 @@ defineProps({
       }
     }
 
+    .detail-content-desc {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .detail-content {
+      flex-direction: column;
+
+    }
   }
 }
 

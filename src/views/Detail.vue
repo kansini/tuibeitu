@@ -9,7 +9,7 @@
     <intro @close="showIntro = false" v-model="showIntro"/>
     <div class="tool-bar" @mouseover="cursorSize = 'small'" @mouseleave="cursorSize = ''">
       <div class="btn-nav" @click="showNav = true"></div>
-      <div class="btn-home" @click="$router.push('/')"></div>
+      <div class="btn-home" @click="router.push('/')"></div>
       <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}"></div>
       <div class="btn-tips" @click="showIntro = true"></div>
       <a href="https://github.com/kansini/tuibeitu" target="_blank" class="btn-github"></a>
@@ -34,6 +34,7 @@ import intro from '@/components/Intro.vue'
 import tbButton from '@/components/kits/Button.vue'
 import {onMounted, reactive, ref} from "vue";
 import {getList} from "@/api/getList";
+import {useRouter} from "vue-router";
 
 const isFullscreen = ref(false)
 const detailIndex = ref(0)
@@ -41,6 +42,7 @@ const showNav = ref(false)
 const showIntro = ref(false)
 const detail = reactive<any[]>([])
 const cursorSize = ref('')
+const router = useRouter()
 const pre = () => {
   if (detailIndex.value > 0) {
     detailIndex.value -= 1

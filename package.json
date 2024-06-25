@@ -8,9 +8,7 @@
     "dev": "vite --mode development",
     "build": "vue-tsc && vite build --mode production",
     "preview": "vite preview",
-    "test": "vue-tsc",
-    "lint": "eslint . --ext .js,.ts,.vue",
-    "lint:fix": "eslint . --ext .js,.ts,.vue --fix"
+    "test": "vue-tsc"
   },
   "dependencies": {
     "@types/lodash": "^4.14.202",
